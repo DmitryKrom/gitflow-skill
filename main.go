@@ -23,4 +23,28 @@ func sortNotes(list []int) {
 
 	}
 	fmt.Println(statisticMap)
+	printMostResult(statisticMap)
+	printLeastResult(statisticMap)
+}
+func printMostResult(statisticMap map[int]int) {
+	var maxRank int
+	var bestNote int
+	for key, val := range statisticMap {
+		if val > maxRank {
+			maxRank = val
+			bestNote = key
+		}
+	}
+	fmt.Printf("Оценка %d получена %d раз(а)\n", bestNote, maxRank)
+}
+func printLeastResult(statisticMap map[int]int) {
+	var maxRank int = 1000
+	var worstNote int
+	for key, val := range statisticMap {
+		if val < maxRank {
+			maxRank = val
+			worstNote = key
+		}
+	}
+	fmt.Printf("Оценка %d получена %d раз(а)\n", worstNote, maxRank)
 }
