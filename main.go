@@ -10,15 +10,15 @@ func main() {
 func sortNotes(list []int) {
 	var statisticMap = make(map[int]int)
 	for i := 0; i < len(list); i++ {
-		var count int = 1
+		var counter int = 1
 
 		for j := i + 1; j < len(list); j++ {
 			if list[j] == list[i] {
-				count++
+				counter++
 			}
 		}
 		if _, ok := statisticMap[list[i]]; !ok {
-			statisticMap[list[i]] = count
+			statisticMap[list[i]] = counter
 		}
 
 	}
