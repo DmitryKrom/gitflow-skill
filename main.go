@@ -12,12 +12,12 @@ func sortNotes(list []int) {
 	for i := 0; i < len(list); i++ {
 		var counter int = 1
 
-		for j := i + 1; j < len(list); j++ {
-			if list[j] == list[i] {
-				counter++
-			}
-		}
 		if _, ok := statisticMap[list[i]]; !ok {
+			for j := i + 1; j < len(list); j++ {
+				if list[j] == list[i] {
+					counter++
+				}
+			}
 			statisticMap[list[i]] = counter
 		}
 
